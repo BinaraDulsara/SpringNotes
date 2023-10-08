@@ -3,18 +3,21 @@ package lk.ijse.dispring.bean;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class Boy implements BeanNameAware, BeanFactoryAware , ApplicationContextAware, InitializingBean , DisposableBean {
 
     /*@Autowired // property injection
     Girl girl ;*/
 
+    @Qualifier("girlOne")
     @Autowired
-    GoodGirl girl;
+    GoodGirl girl ;
 
     public Boy() {
         System.out.println("BOY Instantiated");
@@ -22,7 +25,7 @@ public class Boy implements BeanNameAware, BeanFactoryAware , ApplicationContext
 
     public void chattingWithGirl(){
 //        System.out.println("from boy === " +this.girl);
-        girl.chat();
+          girl.chat();
     }
 
     @Override
