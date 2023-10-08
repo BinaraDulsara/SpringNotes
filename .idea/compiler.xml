@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="test1" />
         <module name="SpringBeanLifeCycle" />
+        <module name="DISpring" />
       </profile>
     </annotationProcessing>
   </component>
