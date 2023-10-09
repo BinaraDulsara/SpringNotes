@@ -11,7 +11,7 @@ public class AppInitializer {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(AppConfig.class);
         context.refresh();
-        context.registerShutdownHook();
+         context.registerShutdownHook();
 
 /*        Boy boy = context.getBean(Boy.class);
         boy.chattingWithGirl();*/
