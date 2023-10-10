@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="test1" />
-        <module name="SpringBeanLifeCycle" />
-        <module name="DISpring" />
+        <module name="SpringMVC" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DISpring" target="1.8" />
+      <module name="FullModelVsLightModel" target="1.8" />
+      <module name="SpringBeanLifeCycle" target="1.8" />
+      <module name="test1" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
