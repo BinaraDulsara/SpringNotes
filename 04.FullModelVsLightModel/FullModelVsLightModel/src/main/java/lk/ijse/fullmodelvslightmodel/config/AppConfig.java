@@ -13,7 +13,7 @@ public class AppConfig {
     @Bean
     public SpringBeanOne getBeanOne(){
 
-        // InterBean Dependency
+        // InterBean Dependency here
 
         SpringBeanTwo bean = getBeanTwo();
         SpringBeanTwo beanTwo = getBeanTwo();
