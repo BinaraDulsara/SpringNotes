@@ -2,10 +2,9 @@ package lk.ijse.fullmodelvslightmodel.bean;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class SpringBean {
+public class SpringBeanOne {
 
-    public SpringBean() {
+    public SpringBeanOne() {
         System.out.println("Spring Bean One instantiated");
     }
 }
