@@ -1,30 +1,38 @@
 package lk.ijse.fullmodelvslightmodel.config;
 
-import lk.ijse.fullmodelvslightmodel.bean.SpringBeanOne;
-import lk.ijse.fullmodelvslightmodel.bean.SpringBeanTwo;
+import lk.ijse.fullmodelvslightmodel.bean.MyBasicDataSource;
+import lk.ijse.fullmodelvslightmodel.bean.MyConnection;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.fullmodelvslightmodel")
+
 public class AppConfig {
 
     @Bean
-    public SpringBeanOne getBeanOne(){
+    public MyBasicDataSource basicDataSource(){
 
-        // InterBean Dependency here
+        /*MyConnection myConnection = new MyConnection();*/
 
-        SpringBeanTwo bean = getBeanTwo();
-        SpringBeanTwo beanTwo = getBeanTwo();
+        // inter-bean dependency invocation
 
-        return new SpringBeanOne();
+        MyConnection myConnection1 = myConnection();
+        MyConnection myConnection2 = myConnection();
+        MyConnection myConnection3 = myConnection();
+
+        MyBasicDataSource myBasicDataSource = new MyBasicDataSource();
+        myBasicDataSource.setMyConnection(myConnection1);
+
+
+        return myBasicDataSource;
     }
+
 
     @Bean
-    public SpringBeanTwo getBeanTwo(){
-        return new SpringBeanTwo();
+    public MyConnection myConnection(){
+        return new MyConnection();
     }
-
 
 }
